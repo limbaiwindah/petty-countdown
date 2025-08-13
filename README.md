@@ -44,4 +44,4 @@ root.geometry("500x300")  # width x height
 
 ## 🎀 Acknowledgements
 Motivational quotes sourced from various authors.
-Created with 😭, ⏳, and a lot of excitement for the internship to end BAHAHAHA
+Created by Windah (catodile)
