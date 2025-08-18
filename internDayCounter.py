@@ -87,7 +87,7 @@ def update_countdown():
     # Build the display message
     message = (
         f"🎯 {weeksLeft} weeks and {leftoverDays} days left!\n\n"
-        f"💀 {days} days {hours:02d} hours {minutes:02d} minutes and {seconds:02d} seconds to freedom 💀"
+        f" 🌝 {days} days {hours:02d} hours {minutes:02d} minutes and {seconds:02d} seconds to freedom 🌝"
     )
 
     # Update the countdown label with new text and color
