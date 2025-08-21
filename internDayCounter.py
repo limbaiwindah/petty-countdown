@@ -8,7 +8,7 @@ from tkinter import messagebox # For popup error messages (not actually used in 
 
 # Start and end date of my internship
 START_DATE = datetime.date(2025, 7, 21)
-END_DATE = datetime.date(2025, 10, 19)
+END_DATE = datetime.date(2025, 10, 21)
 
 # Passive-aggressive quotes to cycle through
 QUOTES = [
