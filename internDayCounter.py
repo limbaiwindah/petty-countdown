@@ -10,18 +10,20 @@ from tkinter import messagebox # For popup error messages (not actually used in 
 START_DATE = datetime.date(2025, 7, 21)
 END_DATE = datetime.date(2025, 10, 21)
 
-# Passive-aggressive quotes to cycle through
+# quotes to cycle through
 QUOTES = [
-    "Remember: They can extend your days, but not your soul.",
-    "Every tick of the clock is one less meeting with them (lol)",
-    "Internship: because free labor sounds better than slavery (lmao)",
-    "Soon you'll be telling this story like a war veteran 😂"
+    "I can do all things through him who strengthens me. - Philippians 4:13",
+    "Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand. - Isaiah 41:10",
+    "My flesh and my heart may fail, but God is the strength of my heart and my portion forever. - Psalm 73:26",
+    "Be strong and courageous. Do not fear or be in dread of them, for it is the Lord your God who goes with you. He will not leave you or forsake you. - Deuteronomy 31:6",
+    "The Lord is my strength and my song, and he has become my salvation; this is my God, and I will praise him, my father's God, and I will exalt him. - Exodus 15:2",
+    "I have told you these things, so that in me you may have peace. In this world you will have trouble. But take heart! I have overcome the world. - John 16:33"
 ]
 
 # ------------------- GUI SETUP -------------------
 
 root = tk.Tk()  # Create main application window
-root.title("Petty Freedom Tracker")  # Title bar text
+root.title("Internship Finishline")  # Title bar text
 root.geometry("550x300")  # Size of window in pixels (Width x Height)
 root.configure(bg="#f9f9f9")  # Background color
 
@@ -76,18 +78,42 @@ def update_countdown():
     weeksLeft = days // 7
     leftoverDays = days % 7
 
-    # Change text color depending on how close you are to freedom
-    if weeksLeft > 6:
-        color = "red"  # suffering stage lol
-    elif 3 < weeksLeft <= 6:
-        color = "orange"  # almost stage
+    # color changing label depending on weeks left
+    if weeksLeft > 12:
+        color = "#4B0000"   # almost black-red (absolute despair)
+    elif 11 < weeksLeft <= 12:
+        color = "#660000"   # very dark red
+    elif 10 < weeksLeft <= 11:
+        color = "#8B0000"   # dark red
+    elif 9 < weeksLeft <= 10:
+        color = "#A52A2A"   # brownish red
+    elif 8 < weeksLeft <= 9:
+        color = "#B22222"   # firebrick
+    elif 7 < weeksLeft <= 8:
+        color = "#DC143C"   # crimson
+    elif 6 < weeksLeft <= 7:
+        color = "#FF4500"   # reddish orange
+    elif 5 < weeksLeft <= 6:
+        color = "#FF6347"   # tomato
+    elif 4 < weeksLeft <= 5:
+        color = "#FF8C00"   # dark orange
+    elif 3 < weeksLeft <= 4:
+        color = "#FFA500"   # orange
+    elif 2 < weeksLeft <= 3:
+        color = "#FFD700"   # gold
+    elif 1 < weeksLeft <= 2:
+        color = "#FFFF00"   # bright yellow
+    elif 0.5 < weeksLeft <= 1:
+        color = "#ADFF2F"   # yellow-green
+    elif 0 < weeksLeft <= 0.5:
+        color = "#7CFC00"   # lawn green
     else:
-        color = "green"  # final sprint
+        color = "#32CD32"   # lime green (victory!)
 
     # Build the display message
     message = (
         f"🎯 {weeksLeft} weeks and {leftoverDays} days left!\n\n"
-        f" 🌝 {days} days {hours:02d} hours {minutes:02d} minutes and {seconds:02d} seconds to freedom 🌝"
+        f" 🌻 {days} days {hours:02d} hours {minutes:02d} minutes and {seconds:02d} seconds to freedom 🌻"
     )
 
     # Update the countdown label with new text and color
@@ -98,9 +124,9 @@ def update_countdown():
 
 
 def update_quote():
-    """Changes the displayed quote every 3 seconds."""
+    """Changes the displayed quote every 7 seconds."""
     quote_label.config(text=f"📢 {random.choice(QUOTES)}")  # Pick a random quote
-    root.after(3000, update_quote)  # Call this function again in 3 seconds
+    root.after(7000, update_quote)  # Call this function again in 3 seconds
 
 # ------------------- START UPDATES -------------------
 
